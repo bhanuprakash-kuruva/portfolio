@@ -10,9 +10,8 @@ import Certifications from "./components/Certifications";
 import ExtraCurricular from "./components/Extra";
 
 const App = () => {
-  
   return (
-    <Router>
+    <Router basename="/portfolio"> {/* Replace <repository-name> with your repo name */}
       <Routes>
         <Route path="/" element={<><Header /><Hero /><Skills /><EducationTimeline /><Projects /><Certifications/><ExtraCurricular/><Contact /><Footer /></>} />
         <Route path="/projects" element={<><Header/><Projects/><Footer/></>}/>
