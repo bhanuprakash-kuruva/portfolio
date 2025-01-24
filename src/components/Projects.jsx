@@ -7,10 +7,11 @@ import Blog from '../assets/blog.jpeg';
 import Bot from '../assets/bot.jpeg';
 import Banner from '../assets/banner.jpeg';
 import Hero from '../assets/main.png'
+import Duniya from '../assets/weather.png'
 
 const projects = [
   {
-    title: 'Blogging App (Node.js & EJS)',
+    title: 'Blogging App (Node.js , Bootstrap  & EJS)',
     description: 'A blogging application built using Node.js, EJS for templating, and Bootstrap for styling. Users can create, edit, and delete blog posts.',
     image: Blog,  
     githubLink: 'https://github.com/bhanuprakash-kuruva/Blog-app',
@@ -24,19 +25,26 @@ const projects = [
     liveLink: 'https://username.github.io/chatbot-app',
   },
   {
-    title: 'Table Tales (Restaurant Website) (MERN & Material UI)',
+    title: 'Table Tales (MERN & Material UI)',
     description: 'A restaurant website built using the MERN stack (MongoDB, Express, React, Node.js) with Material UI for a modern, responsive design.',
     image: Banner,  
     githubLink: 'https://github.com/bhanuprakash-kuruva/restaurant-app',
     liveLink: 'https://username.github.io/table-tales',
   },
   {
-    title: 'Portfolio Website (React & Material UI)',
-    description: 'A personal portfolio website built with React and the MERN stack to showcase my skills, projects, and experiences.',
+    title: 'Portfolio Website (React.js & Material UI)',
+    description: 'A personal portfolio website built with React and the MERN stack to showcase my skills, educational highlights, projects and certifications.',
     image: Hero,  
     githubLink: 'https://github.com/bhanuprakash-kuruva/portfolio',
     liveLink: 'https://username.github.io/portfolio-website',
   },
+  {
+    title: 'Duniya App (React.js & Material-UI)',
+    description: 'A MERN stack app delivering real-time news, weather, maps, and global insights, designed with Material-UI for a sleek and responsive user experience.',
+    image: Duniya,  
+    githubLink: 'https://github.com/bhanuprakash-kuruva/Duniya',
+    liveLink: 'https://username.github.io/duniya-app',
+},
 ];
 
 const Projects = () => {

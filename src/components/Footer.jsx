@@ -10,7 +10,7 @@ const Footer = () => {
         {/* Contact Info */}
         <Grid item xs={12}>
           <Typography variant="h6" sx={{ fontSize:'25px', textAlign: 'center' }}>
-            <GitHub /> Bhanu Prakash
+             Bhanu Prakash
           </Typography>
         </Grid>
 

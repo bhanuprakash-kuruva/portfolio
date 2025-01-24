@@ -6,6 +6,7 @@ import BookIcon from '@mui/icons-material/Book';
 import CodeIcon from '@mui/icons-material/Code';
 import WebIcon from '@mui/icons-material/Web'; // For MERN Stack
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const timelineData = [
   {
@@ -77,7 +78,7 @@ const CustomTimeline = () => {
           align="center"
           sx={{ marginTop: '40px', fontSize: { xs: '0.9rem', sm: '1rem' }, color: 'gray' }}
         >
-          This is just the beginning of my journey. I look forward to embracing new opportunities and challenges that lie ahead. Want to know more about my work? Check out my <a href="/" style={{ color: '#1976d2', textDecoration: 'none' }}>projects</a> or <a href="/" style={{ color: '#1976d2', textDecoration: 'none' }}>get in touch</a> with me!
+          This is just the beginning of my journey. I look forward to embracing new opportunities and challenges that lie ahead. Want to know more about my work? Check out my <a href="/" style={{ color: '#1976d2', textDecoration: 'none' }}><Link to={'/projects'}>projects</Link></a> or <a href="/" style={{ color: '#1976d2', textDecoration: 'none' }}><Link to={'/contact'}>get in touch</Link></a> with me!
         </Typography>
         </Typography>
 

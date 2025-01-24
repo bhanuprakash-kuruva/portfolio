@@ -39,6 +39,10 @@ const Skills = () => {
     { skill: "Three.js", icon: <WebIcon />, proficiency: 15, color: '#25FF2F' }
   ];
 
+  const designSkills = [
+    { skill: "Figma", icon: <WebIcon />, proficiency: 40, color: '#673AB7' },
+    
+  ];
   // Handle tab change
   const handleTabChange = (event, newValue) => {
     setValue(newValue);
@@ -112,11 +116,13 @@ const Skills = () => {
       >
         <Tab label="Programming Languages" />
         <Tab label="Web Development Skills" />
+        <Tab label="UI Design" />
       </Tabs>
 
       {/* Display content based on the selected tab */}
       {value === 0 && renderSkillBars(programmingLanguages)}
       {value === 1 && renderSkillBars(webDevelopmentSkills)}
+      {value === 2 && renderSkillBars(designSkills)}
     </Box>
   );
 };
