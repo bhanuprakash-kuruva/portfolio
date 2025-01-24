@@ -33,7 +33,7 @@ const projects = [
   },
   {
     title: 'Portfolio Website (React.js & Material UI)',
-    description: 'A personal portfolio website built with React and the MERN stack to showcase my skills, educational highlights, projects and certifications.',
+    description: 'A personal portfolio website built with Material UI and the MERN stack to showcase my skills, educational highlights, projects and certifications.',
     image: Hero,  
     githubLink: 'https://github.com/bhanuprakash-kuruva/portfolio',
     liveLink: 'https://username.github.io/portfolio-website',
