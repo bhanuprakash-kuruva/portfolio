@@ -84,6 +84,19 @@ const Header = () => {
           </li>
           <li>
             <NavLink
+              to="/work"
+              style={({ isActive }) => ({
+                textDecoration: 'none',
+                color: isActive ? theme.palette.primary.main : 'white',
+                fontWeight: isActive ? 'bold' : 'normal',
+                fontSize: '18px',
+              })}
+            >
+             Work Experience
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
               to="/skills"
               style={({ isActive }) => ({
                 textDecoration: 'none',
@@ -237,6 +250,19 @@ const Header = () => {
                     Projects
                   </NavLink>
                 </li>
+                <li>
+            <NavLink
+              to="/work"
+              style={({ isActive }) => ({
+                textDecoration: 'none',
+                color: isActive ? theme.palette.primary.main : 'white',
+                fontWeight: isActive ? 'bold' : 'normal',
+                fontSize: '18px',
+              })}
+            >
+              Experience
+            </NavLink>
+          </li>
                 <li>
                   <NavLink
                     to="/skills"

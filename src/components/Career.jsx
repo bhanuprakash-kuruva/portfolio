@@ -4,7 +4,8 @@ import { Timeline, TimelineItem, TimelineSeparator, TimelineConnector, TimelineC
 import SchoolIcon from '@mui/icons-material/School';
 import BookIcon from '@mui/icons-material/Book';
 import CodeIcon from '@mui/icons-material/Code';
-import WebIcon from '@mui/icons-material/Web'; // For MERN Stack
+import WebIcon from '@mui/icons-material/Web'; 
+import DesignServicesIcon from '@mui/icons-material/DesignServices';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
@@ -39,6 +40,12 @@ const timelineData = [
     description: 'Successfully completed a MERN stack course and gained in-depth knowledge of web development using MongoDB, Express, React, and Node.js.',
     icon: <WebIcon />,
   },
+  {
+    year: '2025',
+    title: 'Learnt Figma, React Native and Firebase',
+    description: 'Enhanced design and mobile app development skills by learning Figma for UI/UX prototyping, React Native for cross-platform mobile development, and Firebase for backend services and real-time data handling.',
+    icon: <DesignServicesIcon />, 
+  }
 ];
 
 const CustomTimeline = () => {

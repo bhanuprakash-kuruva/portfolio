@@ -26,18 +26,27 @@ const Skills = () => {
   // Define skills for Programming Languages
   const programmingLanguages = [
     { skill: "C", icon: <CodeIcon />, proficiency: 75, color: '#4CAF50' },
-    { skill: "Java", icon: <CodeIcon />, proficiency: 80, color: '#FF9800' },
-    { skill: "Python", icon: <CodeIcon />, proficiency: 85, color: '#2196F3' },
+    { skill: "Java", icon: <CodeIcon />, proficiency: 85, color: '#FF9800' },
+    { skill: "Python", icon: <CodeIcon />, proficiency: 70, color: '#2196F3' },
   ];
 
   // Define skills for Web Development
   const webDevelopmentSkills = [
     { skill: "React.js", icon: <WebIcon />, proficiency: 90, color: '#673AB7' },
     { skill: "Node.js", icon: <WebIcon />, proficiency: 85, color: '#3E863D' },
-    { skill: "Redis", icon: <MemoryIcon />, proficiency: 70, color: '#D32F2F' },
     { skill: "Socket.IO", icon: <WebIcon />, proficiency: 65, color: '#FF5722' },
-    { skill: "Three.js", icon: <WebIcon />, proficiency: 15, color: '#25FF2F' }
+    { skill: "Firebase", icon: <WebIcon />, proficiency: 60, color: '#25FF2F' }
   ];
+
+  const appSkills=[
+    { skill: "React Native", icon: <WebIcon />, proficiency: 40, color: '#673AB7' },
+  ]
+
+  const databases =[
+    { skill: "Redis", icon: <MemoryIcon />, proficiency: 70, color: '#D32F2F' },
+    { skill: "MongoDB", icon: <MemoryIcon />, proficiency: 80, color: '#D3212F' },
+    { skill: "MySQL", icon: <MemoryIcon />, proficiency: 85, color: '#F3FF2F' },
+  ]
 
   const designSkills = [
     { skill: "Figma", icon: <WebIcon />, proficiency: 40, color: '#673AB7' },
@@ -117,12 +126,16 @@ const Skills = () => {
         <Tab label="Programming Languages" />
         <Tab label="Web Development Skills" />
         <Tab label="UI Design" />
+        <Tab label="Databases" />
+        <Tab label="App Development" />
       </Tabs>
 
       {/* Display content based on the selected tab */}
       {value === 0 && renderSkillBars(programmingLanguages)}
       {value === 1 && renderSkillBars(webDevelopmentSkills)}
       {value === 2 && renderSkillBars(designSkills)}
+      {value === 3 && renderSkillBars(databases)}
+      {value === 4 && renderSkillBars(appSkills)}
     </Box>
   );
 };

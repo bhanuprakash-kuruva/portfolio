@@ -8,43 +8,61 @@ import Bot from '../assets/bot.jpeg';
 import Banner from '../assets/banner.jpeg';
 import Hero from '../assets/main.png'
 import Duniya from '../assets/weather.png'
+import IdeaBridge from '../assets/IdeaBridge.png'
+import Foodify from '../assets/Foodify.png'
 
 const projects = [
   {
     title: 'Blogging App (Node.js , Bootstrap  & EJS)',
     description: 'A blogging application built using Node.js, EJS for templating, and Bootstrap for styling. Users can create, edit, and delete blog posts.',
-    image: Blog,  
+    image: Blog,
     githubLink: 'https://github.com/bhanuprakash-kuruva/Blog-app',
-    liveLink: 'https://username.github.io/blogging-app',
+    liveLink: 'http://username.github.io/blogging-app',
   },
   {
     title: 'Chatbot Application (MERN Stack)',
     description: 'A chatbot application built using the MERN stack (MongoDB, Express, React, Node.js) with natural language processing for conversation handling.',
-    image: Bot,  
+    image: Bot,
     githubLink: 'https://github.com/bhanuprakash-kuruva/chatbot',
-    liveLink: 'https://username.github.io/chatbot-app',
+    liveLink: 'http://username.github.io/chatbot-app',
   },
   {
     title: 'Table Tales (MERN & Material UI)',
     description: 'A restaurant website built using the MERN stack (MongoDB, Express, React, Node.js) with Material UI for a modern, responsive design.',
-    image: Banner,  
+    image: Banner,
     githubLink: 'https://github.com/bhanuprakash-kuruva/restaurant-app',
-    liveLink: 'https://username.github.io/table-tales',
+    liveLink: 'http://username.github.io/table-tales',
   },
   {
     title: 'Portfolio Website (React.js & Material UI)',
     description: 'A personal portfolio website built with Material UI and the MERN stack to showcase my skills, educational highlights, projects and certifications.',
-    image: Hero,  
+    image: Hero,
     githubLink: 'https://github.com/bhanuprakash-kuruva/portfolio',
-    liveLink: 'https://username.github.io/portfolio-website',
+    liveLink: 'http://username.github.io/portfolio-website',
   },
   {
     title: 'Duniya App (React.js & Material-UI)',
     description: 'A MERN stack app delivering real-time news, weather, maps, and global insights, designed with Material-UI for a sleek and responsive user experience.',
-    image: Duniya,  
+    image: Duniya,
     githubLink: 'https://github.com/bhanuprakash-kuruva/Duniya',
-    liveLink: 'https://username.github.io/duniya-app',
-},
+    liveLink: 'http://username.github.io/duniya-app',
+  },
+  {
+    title: 'IdeaBridge (MERN Stack & Material-UI)',
+    description: 'A collaborative innovation platform built using the MERN stack that enables users to submit ideas, manage projects, track real-time progress, and engage in nested discussions.',
+    image: IdeaBridge,
+    githubLink: 'https://github.com/bhanuprakash-kuruva/Idea-Bridge',
+    liveLink: 'http://username.github.io/idea-bridge', // replace with actual live link if available
+  },
+  {
+    title: 'Foodify (Figma Prototype)',
+    description: 'A visually engaging e-commerce food delivery website prototype designed in Figma. Includes interactive user flows and pages such as Home, About, Services, Menu, Sign In/Up, Profile, and Terms & Conditions, focusing on responsive layout and user experience.',
+    image: Foodify,
+    githubLink: '',  // No GitHub link since it's a Figma prototype
+    liveLink: 'https://www.figma.com/proto/qDKQJT0UjmtqRB3wutVHX6/Mini-project?node-id=1-2&t=0xHg8n9yMyVPUbCo-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A2',
+  }
+
+
 ];
 
 const Projects = () => {
@@ -65,7 +83,7 @@ const Projects = () => {
         </Typography>
       </motion.div>
 
-      <Box sx={{height:'30px'}}></Box>
+      <Box sx={{ height: '30px' }}></Box>
 
       <Grid container spacing={4} justifyContent="center">
         {projects.map((project, index) => (
@@ -115,8 +133,8 @@ const Projects = () => {
                     </Typography>
                   </CardContent>
                   <Box sx={{
-                    display: 'flex', 
-                    justifyContent: 'space-between', 
+                    display: 'flex',
+                    justifyContent: 'space-between',
                     padding: '16px',
                     backgroundColor: "rgb(235, 235, 235)",
                     borderTop: '1px solid #ddd',
@@ -138,6 +156,25 @@ const Projects = () => {
                         GitHub
                       </Button>
                     </Link>
+                    {
+                      project.liveLink.startsWith('https://') ?(
+                        <Link href={project.liveLink} target="_blank" rel="noopener noreferrer">
+                      <Button
+                        variant="outlined"
+                        size="small"
+                        startIcon={<LaunchIcon />}
+                        sx={{
+                          backgroundColor: "rgb(235, 235, 235)",
+                          '&:hover': { color: '#fff', backgroundColor: '#1976d2' },
+                        }}
+                      >
+                        Live Demo
+                      </Button>
+                    </Link>
+                      ):(
+                        <></>
+                      )
+                    }
                     {/* <Link href={project.liveLink} target="_blank" rel="noopener noreferrer">
                       <Button
                         variant="outlined"
