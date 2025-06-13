@@ -142,7 +142,9 @@ const Projects = () => {
                       backgroundColor: '#e0e0e0', // Change background color on hover
                     },
                   }}>
-                    <Link href={project.githubLink} target="_blank" rel="noopener noreferrer">
+                    {
+                      project.githubLink && (
+                        <Link href={project.githubLink} target="_blank" rel="noopener noreferrer">
                       <Button
                         variant="outlined"
                         startIcon={<GitHubIcon />}
@@ -156,6 +158,8 @@ const Projects = () => {
                         GitHub
                       </Button>
                     </Link>
+                      )
+                    }
                     {
                       project.liveLink.startsWith('https://') ?(
                         <Link href={project.liveLink} target="_blank" rel="noopener noreferrer">
