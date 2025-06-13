@@ -12,7 +12,7 @@ import WorkExperience from "./components/WorkExperience";
 
 const App = () => {
   return (
-    <Router basename="/portfolio"> {/* Replace <repository-name> with your repo name */}
+    <Router> {/* ✅ Removed basename */}
       <Routes>
         <Route path="/" element={<><Header /><Hero /><Skills /><EducationTimeline /><Projects /><WorkExperience/><Certifications/><ExtraCurricular/><Contact /><Footer /></>} />
         <Route path="/projects" element={<><Header/><Projects/><Footer/></>}/>
