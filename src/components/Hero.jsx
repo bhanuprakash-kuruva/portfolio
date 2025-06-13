@@ -67,10 +67,28 @@ const Hero = () => {
                   '&:hover': { backgroundColor: '#64b5f6' },
                   size: 'large',
                   marginTop: { xs: '20px', sm: '0' },
+                  marginRight: '20px'
                 }}
                 href="https://www.linkedin.com/in/bhanuprakash-kuruva"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <Typography sx={{ color: 'blue' }}>Connect with me on LinkedIn</Typography>
+              </Button>
+              <Button
+                variant="contained"
+                sx={{
+                  backgroundColor: 'rgb(92, 217, 255)',
+                  '&:hover': { backgroundColor: '#64b5f6' },
+                  size: 'large',
+                  marginTop: { xs: '20px', sm: '0' },
+                  
+                }}
+                href="/BhanuPrakash_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Typography sx={{ color: 'blue' }}>View Resume</Typography>
               </Button>
             </motion.div>
           </motion.div>
