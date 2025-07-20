@@ -6,47 +6,65 @@ import BookIcon from '@mui/icons-material/Book';
 import CodeIcon from '@mui/icons-material/Code';
 import WebIcon from '@mui/icons-material/Web'; 
 import DesignServicesIcon from '@mui/icons-material/DesignServices';
+import { BugReport } from '@mui/icons-material';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
+
 const timelineData = [
   {
-    year: '2020',
-    title: 'Completed 10th Standard',
-    description: 'Completed 10th class with a CGPA of 10.0, laying the foundation for a career in technology.',
+    year: '2025',
+    title: 'Learned Cypress for Testing',
+    description:
+      'Recently acquired Cypress, an end-to-end testing framework, enhancing my testing and automation skills.',
+    icon: <BugReport />,
+  },
+  {
+    year: '2025',
+    title: 'Learnt Figma, React Native and Firebase',
+    description:
+      'Enhanced design and mobile app development skills by learning Figma for UI/UX prototyping, React Native for cross-platform mobile development, and Firebase for backend services and real-time data handling.',
+    icon: <DesignServicesIcon />,
+  },
+  {
+    year: '2024',
+    title: 'Completed MERN Stack Course',
+    description:
+      'Successfully completed a MERN stack course and gained in-depth knowledge of web development using MongoDB, Express, React, and Node.js.',
+    icon: <WebIcon />,
+  },
+  {
+    year: '2023',
+    title: 'Mastered C Programming and Java',
+    description:
+      'Gained proficiency in C programming and Java, along with mastering Data Structures and Algorithms (DSA).',
+    icon: <CodeIcon />,
+  },
+  {
+    year: '2022',
+    title: 'Completed PUC',
+    description:
+      'Completed PUC with a CGPA of 9.92 and joined Computer Science and Engineering for a BTech degree.',
     icon: <SchoolIcon />,
   },
   {
     year: '2021',
     title: 'Joined RGUKT CET for PUC',
-    description: 'Secured a seat in the RGUKT CET and joined the Pre-University Course (PUC) to continue academic excellence.',
+    description:
+      'Secured a seat in the RGUKT CET and joined the Pre-University Course (PUC) to continue academic excellence.',
     icon: <BookIcon />,
   },
   {
-    year: '2022',
-    title: 'Completed PUC',
-    description: 'Completed PUC with a CGPA of 9.92 and joined Computer Science and Engineering for a BTech degree.',
+    year: '2020',
+    title: 'Completed 10th Standard',
+    description:
+      'Completed 10th class with a CGPA of 10.0, laying the foundation for a career in technology.',
     icon: <SchoolIcon />,
   },
-  {
-    year: '2023',
-    title: 'Mastered C Programming and Java',
-    description: 'Gained proficiency in C programming and Java, along with mastering Data Structures and Algorithms (DSA).',
-    icon: <CodeIcon />,
-  },
-  {
-    year: '2024',
-    title: 'Completed MERN Stack Course',
-    description: 'Successfully completed a MERN stack course and gained in-depth knowledge of web development using MongoDB, Express, React, and Node.js.',
-    icon: <WebIcon />,
-  },
-  {
-    year: '2025',
-    title: 'Learnt Figma, React Native and Firebase',
-    description: 'Enhanced design and mobile app development skills by learning Figma for UI/UX prototyping, React Native for cross-platform mobile development, and Firebase for backend services and real-time data handling.',
-    icon: <DesignServicesIcon />, 
-  }
 ];
+
+
+
 
 const CustomTimeline = () => {
   const isSmallScreen = useMediaQuery('(max-width:600px)'); // Detect mobile screens

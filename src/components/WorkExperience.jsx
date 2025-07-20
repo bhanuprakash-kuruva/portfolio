@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Logo from '../assets/logo.jpeg'
 const experiences = [
   {
-    year: "April 2025 - Present",
+    year: "May 2025 - July 2025",
     title: "Web Development Intern",
     org: "PRAGYASHAL – Remote",
     description:

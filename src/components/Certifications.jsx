@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'; // Import Framer Motion
 import Mongo from '../assets/mongo.png';
 import Web from '../assets/web.png';
 import Testing from '../assets/testing.jpg';
+import Internship from '../assets/Summer_Internship_Certificate.png';
 
 const certifications = [
     {
@@ -27,6 +28,13 @@ const certifications = [
         issueDate: 'January 2025',
         certificateLink: 'https://coursera.org/certificate/username-backend-development',
         image: Testing,
+    },
+    {
+        title: 'Summer Internship',
+        organization: 'Pragyashal',
+        issueDate: 'July 2025',
+        certificateLink: 'https://coursera.org/certificate/username-backend-development',
+        image: Internship,
     },
 ];
 
@@ -123,9 +131,9 @@ const Certifications = () => {
                                         Issued: {cert.issueDate}
                                     </Typography>
                                     {
-                                       cert.title === 'Web Development (MERN Stack)' ? (<Box sx={{height:'30px'}}></Box>) :(<Box></Box>)
+                                       cert.title === 'Web Development (MERN Stack)' || cert.title === 'Summer Internship' ? (<Box sx={{height:'30px'}}></Box>) :(<Box></Box>)
                                     }
-                                    {cert.title !== 'Software Testing (Fundamentals)' ? (
+                                    {cert.title !== 'Software Testing (Fundamentals)' && cert.title !== 'Summer Internship' ? (
                                         <Button
                                             variant="contained"
                                             color="primary"
