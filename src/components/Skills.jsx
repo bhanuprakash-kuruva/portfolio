@@ -1,209 +1,198 @@
 
-import React, { useEffect, useState, useRef } from 'react';
+import React from 'react';
 import {
   Box,
   Typography,
-  LinearProgress,
-  Tooltip,
+  Grid,
+  Paper,
   Stack,
-  Tabs,
-  Tab,
-  Accordion,
-  AccordionSummary,
-  AccordionDetails,
-  useMediaQuery,
-  useTheme
+  Avatar,
+  Container,
+  IconButton,
+  AppBar,
+  Toolbar,
+  Button
 } from '@mui/material';
-import { motion } from 'framer-motion';
-import { Code as CodeIcon, Web as WebIcon, Memory as MemoryIcon, BugReport } from '@mui/icons-material';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { keyframes } from '@emotion/react';
+import { styled } from '@mui/material/styles';
+import DarkModeIcon from '@mui/icons-material/DarkMode';
 
-// Animation for progress bar
-const barAnimation = keyframes`
-  0% { width: 0; }
-  100% { width: 100%; }
-`;
+const StyledPaper = styled(Paper)(({ theme }) => ({
+  padding: theme.spacing(3),
+  borderRadius: 16,
+  textAlign: 'center',
+  backgroundColor: '#1e1e1e',
+  border: '1px solid #333',
+  transition: 'all 0.3s ease',
+  '&:hover': {
+    transform: 'translateY(-4px)',
+    boxShadow: '0 8px 32px rgba(0, 0, 0, 0.5)',
+    borderColor: '#555',
+  },
+}));
 
-const Skills = () => {
-  const [animate, setAnimate] = useState(false);
-  const [value, setValue] = useState(0);
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-  const scrollRef = useRef(null);
+const SkillAvatar = styled(Avatar)(({ theme }) => ({
+  width: 40,
+  height: 40,
+  margin: '0 auto 6px',
+  backgroundColor: '#fff',
+  boxShadow: '0 2px 8px rgba(0, 0, 0, 0.3)',
+  transition: 'transform 0.2s ease',
+  '&:hover': {
+    transform: 'scale(1.1)',
+  },
+}));
 
-  useEffect(() => {
-    setAnimate(true);
-  }, []);
-
-  const handleTabChange = (event, newValue) => {
-    setValue(newValue);
-    // Optional scroll to content
-    scrollRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  };
-
-  const skillGroups = [
-    { label: 'Programming Languages', data: [
-        { skill: 'C', icon: <CodeIcon />, proficiency: 75, color: '#4CAF50' },
-        { skill: 'Java', icon: <CodeIcon />, proficiency: 85, color: '#FF9800' },
-        { skill: 'Python', icon: <CodeIcon />, proficiency: 70, color: '#2196F3' }
-      ]
-    },
-    { label: 'Web Development Skills', data: [
-      { skill: 'HTML', icon: <WebIcon />, proficiency: 90, color: '#FF11FF' },
-      { skill: 'CSS', icon: <WebIcon />, proficiency: 80, color: '#1131B7' },
-      { skill: 'JavaScript', icon: <WebIcon />, proficiency: 75, color: '#67FAB7' },
-        { skill: 'React.js', icon: <WebIcon />, proficiency: 90, color: '#673AB7' },
-        { skill: 'Node.js', icon: <WebIcon />, proficiency: 85, color: '#3E863D' },
-        { skill: 'Socket.IO', icon: <WebIcon />, proficiency: 65, color: '#FF5722' },
-        { skill: 'Firebase', icon: <WebIcon />, proficiency: 60, color: '#25FF2F' }
-      ]
-    },
-    { label: 'UI Design', data: [
-        { skill: 'Figma', icon: <WebIcon />, proficiency: 80, color: '#673AB7' }
-      ]
-    },
-    { label: 'Databases', data: [
-        { skill: 'Redis', icon: <MemoryIcon />, proficiency: 70, color: '#D32F2F' },
-        { skill: 'MongoDB', icon: <MemoryIcon />, proficiency: 80, color: '#00FF00' },
-        { skill: 'MySQL', icon: <MemoryIcon />, proficiency: 85, color: '#0000FF' }
-      ]
-    },
-    { label: 'App Development', data: [
-        { skill: 'React Native', icon: <WebIcon />, proficiency: 70, color: '#6700FF' }
-      ]
-    },
-    { label: 'Testing', data: [
-      { skill: 'Cypress', icon: <BugReport />, proficiency: 70, color: '#670011' }
+const skillGroups = [
+  {
+    label: 'Programming Languages',
+    data: [
+      { skill: 'C', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg', color: '#A8B9CC' },
+      { skill: 'Java', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg', color: '#ED8B00' },
+      { skill: 'Python', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg', color: '#3776AB' }
+    ]
+  },
+  {
+    label: 'Frontend',
+    data: [
+      { skill: 'HTML5', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg', color: '#E34F26' },
+      { skill: 'CSS3', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg', color: '#1572B6' },
+      { skill: 'JavaScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg', color: '#F7DF1E' },
+      { skill: 'React.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg', color: '#61DAFB' },
+      { skill: 'Tailwind CSS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg', color: '#06B6D4' }
+    ]
+  },
+  {
+    label: 'Backend',
+    data: [
+      { skill: 'Node.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg', color: '#339933' },
+      { skill: 'Express.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg', color: '#000000' },
+      { skill: 'Socket.IO', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/socketio/socketio-original.svg', color: '#010101' },
+      { skill: 'Firebase', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg', color: '#FFCA28' }
+    ]
+  },
+  {
+    label: 'Databases',
+    data: [
+      { skill: 'MySQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg', color: '#4479A1' },
+      { skill: 'MongoDB', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg', color: '#47A248' },
+      { skill: 'Redis', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg', color: '#DC382D' }
+    ]
+  },
+  {
+    label: 'Mobile Development',
+    data: [
+      { skill: 'React Native', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg', color: '#61DAFB' }
+    ]
+  },
+  {
+    label: 'UI Design',
+    data: [
+      { skill: 'Figma', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg', color: '#F24E1E' }
+    ]
+  },
+  {
+    label: 'Testing',
+    data: [
+      { skill: 'Cypress', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cypressio/cypressio-original.svg', color: '#17202C' }
+    ]
+  },
+  {
+    label: 'Tools',
+    data: [
+      { skill: 'Docker', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg', color: '#2496ED' },
+      { skill: 'Git', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg', color: '#F05032' },
+      { skill: 'VS Code', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg', color: '#007ACC' }
     ]
   }
-  ];
+];
 
-  const renderSkillBars = (skills) => (
-    <Stack spacing={4} alignItems="center">
-      {skills.map((skill, index) => (
-        <Box key={index} sx={{ width: '80%', display: 'flex', alignItems: 'center' }}>
-          <Box sx={{ marginRight: '16px', display: 'flex', alignItems: 'center' }}>
-            {skill.icon}
-          </Box>
-          <Box sx={{ width: '100%' }}>
-            <Tooltip title={`${skill.skill} (${skill.proficiency}%)`} arrow>
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 + index * 0.2 }}
-              >
-                <Box sx={{ position: 'relative' }}>
-                  <LinearProgress
-                    variant="determinate"
-                    value={skill.proficiency}
-                    sx={{
-                      height: 12,
-                      borderRadius: 5,
-                      backgroundColor: '#333',
-                      '& .MuiLinearProgress-bar': {
-                        backgroundColor: skill.color,
-                        animation: animate ? `${barAnimation} 2s ease-in-out` : 'none'
-                      }
-                    }}
-                  />
-                  <Typography
-                    variant="caption"
-                    sx={{
-                      position: 'absolute',
-                      right: 8,
-                      top: '-22px',
-                      fontWeight: 600,
-                      color: skill.color
-                    }}
-                  >
-                    {skill.proficiency}%
-                  </Typography>
-                </Box>
-              </motion.div>
-            </Tooltip>
-            <Typography variant="h6" sx={{ marginTop: '10px', textAlign: 'left' }}>
-              {skill.skill}
-            </Typography>
-          </Box>
-        </Box>
-      ))}
-    </Stack>
-  );
-
+const Skills = () => {
   return (
-    <Box sx={{ padding: '40px 20px', color: 'gray' }}>
-      <Typography
-        variant="h4"
-        align="center"
-        gutterBottom
-        sx={{ fontSize: { xs: '1.5rem', sm: '2rem' }, color: 'aliceblue' }}
-      >
-        My Skills
-      </Typography>
-      <Typography
-        variant="subtitle1"
-        align="center"
-        sx={{ fontSize: { xs: '0.875rem', sm: '1rem' }, color: 'gray' }}
-      >
-        I am proficient in a variety of programming languages and technologies. Here are a few of my key skills:
-      </Typography>
-
-      {/* Mobile: Accordions */}
-      {isMobile ? (
-        <Box mt={4}>
-          {skillGroups.map((group, idx) => (
-            <Accordion
-              key={idx}
-              sx={{
-                backgroundColor: '#1e1e1e',
-                color: 'white',
-                borderRadius: 1,
-                mb: 1,
-                '&.Mui-expanded': {
-                  backgroundColor: '#2b2b2b'
-                },
-                '&::before': { display: 'none' }
-              }}
-            >
-              <AccordionSummary expandIcon={<ExpandMoreIcon sx={{ color: 'white' }} />}>
-                <Typography fontWeight={600}>{group.label}</Typography>
-              </AccordionSummary>
-              <AccordionDetails>{renderSkillBars(group.data)}</AccordionDetails>
-            </Accordion>
-          ))}
-        </Box>
-      ) : (
-        <>
-          {/* Desktop: Tabs */}
-          <Tabs
-            value={value}
-            onChange={handleTabChange}
-            centered
-            sx={{
-              mt: 3,
-              '& .MuiTab-root': {
-                color: 'white',
-                transition: 'all 0.3s ease-in-out'
-              },
-              '& .Mui-selected': {
-                fontWeight: 'bold',
-                color: '#90caf9'
-              },
-              '& .MuiTabs-indicator': {
-                backgroundColor: '#90caf9'
-              }
-            }}
+    <Box sx={{ 
+      minHeight: '100vh',
+      backgroundColor: 'black',
+      color: 'white',
+      pb: 8
+    }}>
+      
+      <Container maxWidth="xl" sx={{ pt: 8 }}>
+        {/* Header Section */}
+        <Box sx={{ textAlign: 'center', mb: 8 }}>
+          <Typography 
+            variant="h4" align="center" gutterBottom sx={{ fontSize: { xs: '1.5rem', sm: '2rem' }, color: 'aliceblue' }}
           >
-            {skillGroups.map((item, index) => (
-              <Tab key={index} label={item.label} />
-            ))}
-          </Tabs>
-          <Box mt={4} ref={scrollRef}>
-            {renderSkillBars(skillGroups[value].data)}
-          </Box>
-        </>
-      )}
+            Skills & Tools
+          </Typography>
+          <Box sx={{ 
+            width: 100, 
+            height: 4, 
+            backgroundColor: '#8B5CF6', 
+            mx: 'auto', 
+            mb: 3,
+            borderRadius: 2
+          }} />
+          <Typography 
+            variant="subtitle1" align="center" sx={{ fontSize: { xs: '0.875rem', sm: '1rem' }, color: 'gray' }}
+          >
+            My web development toolkit, organized for quick overview.
+          </Typography>
+        </Box>
+
+        {/* Skills Grid */}
+        <Grid container spacing={4}>
+          {skillGroups.map((group, idx) => (
+            <Grid item xs={12} sm={6} md={4} lg={3} key={idx}>
+              <StyledPaper elevation={8}>
+                <Typography
+                  variant="h6"
+                  sx={{ color: '#8B5CF6', fontWeight: 'bold', mb: 3 }}
+                >
+                  {group.label}
+                </Typography>
+
+                <Box sx={{ 
+                  display: 'flex',
+                  flexWrap: 'wrap',
+                  justifyContent: 'center',
+                  gap: 2
+                }}>
+                  {group.data.map((skill, index) => (
+                    <Box key={index} sx={{ 
+                      textAlign: 'center',
+                      minWidth: '60px',
+                      flex: '0 0 auto'
+                    }}>
+                      <SkillAvatar
+                        src={skill.icon}
+                        alt={skill.skill}
+                        sx={{
+                          backgroundColor: '#fff',
+                          '& img': {
+                            width: '70%',
+                            height: '70%',
+                            objectFit: 'contain'
+                          }
+                        }}
+                      />
+                      <Typography 
+                        variant="body2" 
+                        sx={{ 
+                          color: 'white',
+                          fontWeight: 500,
+                          fontSize: '0.75rem',
+                          lineHeight: 1.2
+                        }}
+                      >
+                        {skill.skill}
+                      </Typography>
+                    </Box>
+                  ))}
+                </Box>
+              </StyledPaper>
+            </Grid>
+          ))}
+        </Grid>
+      </Container>
     </Box>
   );
 };

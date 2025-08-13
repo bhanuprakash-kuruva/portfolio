@@ -182,7 +182,7 @@ const Contact = () => {
           </Grid>
         </Grid>
       </Container>
-      <Box sx={{width:'400px', display:'flex',justifyContent:'center',mx:'auto',marginTop:2}}>
+      {/* <Box sx={{width:'400px', display:'flex',justifyContent:'center',mx:'auto',marginTop:2}}>
       <Paper sx={{ padding: '20px', backgroundColor: '#333', boxShadow: 3, marginTop: '20px' }}>
                 <Typography variant="h6" gutterBottom>
                   You can also find me here:
@@ -237,7 +237,7 @@ const Contact = () => {
                   </Grid>
                 </Grid>
               </Paper>
-      </Box>
+      </Box> */}
     </Box>
   );
 };
